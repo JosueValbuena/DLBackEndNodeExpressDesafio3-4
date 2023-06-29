@@ -16,7 +16,7 @@ const addPost = async (titulo, img, descripcion, likes) => {
 const modifyPost = async (id) => {
     const consulta = "UPDATE posts SET likes = likes + 1 WHERE id = $1";
     const values = [id];
-    const {rows} = await pool.query(consulta, values);
+    const { rows } = await pool.query(consulta, values);
     return rows;
 }
 
